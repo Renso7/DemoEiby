@@ -9,10 +9,19 @@ import continental.demo.model.Usuario;
 @Service
 public class AppService implements IAppService {
 
+    private static List<Usuario> listarUsuario = null;
+
+    public AppService() throws Exception {
+        listarUsuario.add(new Usuario("Jose12", "ABC123"));
+        listarUsuario.add(new Usuario("Juan2023", "123ABC"));
+        listarUsuario.add(new Usuario("Maria23", "ABC123"));
+        listarUsuario.add(new Usuario("Pepe20", "123ABC"));
+        throw new Exception();
+    }
+
     @Override
     public List<Usuario> listarUsuario() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listarUsuario'");
+        return listarUsuario;
     }
 
     @Override
