@@ -14,16 +14,16 @@ import continental.demo.service.IAppService;
 public class AppController {
 
     @Autowired
-    private IAppService appService;
+    public IAppService appService;
 
-    @GetMapping
+    @GetMapping("/Usuario")
     public String listarUsuarios(Model model) {
         List<Usuario> listarUsuarios = appService.listarUsuario();
         model.addAttribute("listaUsuarios", listarUsuarios);
         return "listaUsuarios";
     }
 
-    @GetMapping("")
+    @GetMapping("/lista")
     public String index() {
         return "index";
     }
